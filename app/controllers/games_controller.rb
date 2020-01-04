@@ -1,45 +1,45 @@
 class GamesController < ApplicationController
-
     def index
-        @games= Game.all.order(id: :asc)
+        @games = Game.all.order(id: :asc)
     end
 
     def new
         @game = Game.new
     end
-    
+
     def create
         @game = Game.new(game_params)
         if @game.save
-            redirect_to(tweets_path)
-          else
-            render(:new)
-          end
+          redirect_to(games_path)
+        else
+          render(:new)
         end
-    end
+      end
 
-    def edit
+      def edit
         @game = Game.find(params[:id])
-    end
+      end
 
-    def update
+      def update
         @game = Game.find(params[:id])
-        if @game.update(games_params)
-            redirect_to(games_path)
+        if @game.update(tweet_params)
+            redirect_to(tweets_path)
         else
             render(:edit)
         end
-    end
+      end
 
-    def destroy
+      def destroy
         @game = Game.find(params[:id])
         @game.destroy
         redirect_to(games_path)
-    end
+      end
 
-    private
+    
+      private
 
-    def game_params
-        params.require(:game).permit(:game)
+      #Strong Params
+      def game_params
+        params.require(:game).permit(:body)
+      end
     end
-end

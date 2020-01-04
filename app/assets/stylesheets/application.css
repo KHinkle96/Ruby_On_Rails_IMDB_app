@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ .game-card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+  }
+  .game-card date {
+    color: #cccccc;
+  }
