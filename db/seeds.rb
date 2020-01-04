@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
-
+ratings = ['E', 'E10', 'T', 'M']
 10.times do |number|
     Game.create({
-        title = Faker::Game.title
-        release_date = Faker::Game.date
-        rating = Faker::Game.rating
-        console = Faker::Game.console
+        title: Faker::Game.title,
+        release_date: Faker::Date.between(from: 62.years.ago, to: Date.today),
+        rating: ratings.sample,
+        console: Faker::Game.platform
     })
 end
