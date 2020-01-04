@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 2020_01_04_001759) do
     t.date "release_date"
     t.string "rating"
     t.string "console"
-    t.datetime "created_at"
-  end
-
-  create_table "tweets", force: :cascade do |t|
-    t.text "body"
     t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
-
 end

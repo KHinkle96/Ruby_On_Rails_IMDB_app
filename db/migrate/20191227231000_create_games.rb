@@ -5,6 +5,7 @@ class CreateGames < ActiveRecord::Migration[6.0]
       t.date :release_date
       t.string :rating
       t.string :console
+      t.timestamps
     end
   end
 end
