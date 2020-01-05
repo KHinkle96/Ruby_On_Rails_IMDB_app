@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imdb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= render("shared/search_form") %>
+  <nav>
+    <%= link_to("Home", root_path) %>
+    <%= link_to("Add a game!", new_game_path) %>
+  </nav>
+
+    <%= yield %>
+  </body>
+</html>
