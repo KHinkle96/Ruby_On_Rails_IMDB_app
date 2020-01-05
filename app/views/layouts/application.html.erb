@@ -10,6 +10,12 @@
   </head>
 
   <body>
+  <%= render("shared/search_form") %>
+  <nav>
+    <%= link_to("Home", root_path) %>
+    <%= link_to("Add a game!", new_game_path) %>
+  </nav>
+
     <%= yield %>
   </body>
 </html>
